@@ -1,0 +1,10 @@
+\contentsline {chapter}{Summary}{ii}{section*.1}
+\contentsline {chapter}{Nomenclature}{iv}{section*.4}
+\contentsline {chapter}{List of Figures}{iv}{section*.5}
+\contentsline {chapter}{\numberline {1}Monte Carlo Methods}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Monte Carlo Methods in Statistical Systems}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Metropolis Algorithm on a 2D Ising Chain}{3}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Metropolis Algorithm for an Arbitrary Statistical System}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Ising Spins as an Example}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Protein folding}{8}{section.1.4}
+\contentsline {section}{\numberline {1.5}The Code Used for this Project}{9}{section.1.5}

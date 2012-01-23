@@ -1,0 +1,34 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Randomly distributed 2D Ising spins}}{3}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The dependence of magnetization $ M $ due to the temperature, $ \beta $.}}{7}{figure.1.2}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces The dependence of magnetization $ M $ due to the temperature, $ \beta $ in 5-level spins.}}{8}{figure.1.4}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Several chains that the algorithm converged. In these chains, $ \beta \cong 3.9 $, in hotter environments, the chains fail to satisfy the convergence criteria. }}{9}{figure.1.6}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The final states of the 2D Ising spin systems for different $ \beta $.}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ \beta =0.1 $}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ \beta =0.15 $}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ \beta =0.2 $}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ \beta =0.25 $}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$ \beta =0.30$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$ \beta =0.35$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {$ \beta =0.40$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {$ \beta =0.45 $}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {$ \beta =0.50$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(j)}{\ignorespaces {$ \beta =0.55$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(k)}{\ignorespaces {$ \beta =0.60$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(l)}{\ignorespaces {$ \beta =0.65$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(m)}{\ignorespaces {$ \beta =0.70$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(n)}{\ignorespaces {$ \beta =0.75$}}}{11}{figure.1.3}
+\contentsline {subfigure}{\numberline {(o)}{\ignorespaces {$ \beta =0.80$}}}{11}{figure.1.3}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces The final states of the modified 2D Ising spin systems for different $ \beta $.}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ \beta =0.1 $}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$ \beta =0.15 $}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$ \beta =0.2 $}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$ \beta =0.25 $}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$ \beta =0.30$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$ \beta =0.35$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {$ \beta =0.40$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {$ \beta =0.45 $}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {$ \beta =0.50$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(j)}{\ignorespaces {$ \beta =0.55$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(k)}{\ignorespaces {$ \beta =0.60$}}}{12}{figure.1.5}
+\contentsline {subfigure}{\numberline {(l)}{\ignorespaces {$ \beta =0.65$}}}{12}{figure.1.5}

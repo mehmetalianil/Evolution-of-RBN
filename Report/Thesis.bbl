@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{metropolis}
+A.~W. Metropolis, A.~W. Rosenbluth, M.~N. Rosenbluth, A.~H. Teller, and
+  E.~Teller.
+\newblock Equations of state calculations by fast computing machines.
+\newblock {\em Journal of Chemical Physics}, 21:1087--1092, 1953.
+
+\bibitem{onsager}
+Lars Onsager.
+\newblock Crystal statistics. i. a two-dimensional model with an order-disorder
+  transition.
+\newblock {\em Phys. Rev.}, 65:117--149, Feb 1944.
+
+\end{thebibliography}

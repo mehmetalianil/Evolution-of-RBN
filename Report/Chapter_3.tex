@@ -1,0 +1,811 @@
+\chapter{Symmetry in Dynamical Systems}
+\thispagestyle{empty}
+
+Having introduced groups, one might go on with explaining dynamical systems with the toolbox obtained. First, definition of a dynamical system is given , for the sake of being complete. Details about dynamical systems will be omitted, the curious reader may consult to related textbooks.
+
+\begin{definition}[Dynamical System]
+\index{dynamical system!definition of}
+\label{def:dynamical_system}
+
+A \textbf{dynamical system} is a notion that consists of:\\
+
+\textbf{a state space:} or a phase space that we will denote as $\mathbb{X}$ in which all possible solutions to it will reside within \\
+
+\textbf{a time set:} which we will denote as $T$ which will contain the parameters $t \in T$ that our dynamical system will evolve within, namely, a set of times. \\
+
+\textbf{evolution operators:} which is a set $\{ \phi^t \}$ which satisfies the following:
+\[\phi_t : \mathbb{X} \mapsto \mathbb{X} \] 
+\end{definition}
+
+This is an all encompassing definition for dynamical systems, including discrete and continuous time dynamical systems. Systems with boolean functions, with discrete time definitions are also included in this broad definition. We would like to focus our interest on dynamical systems with continuous dynamical systems, thus we will narrow our definition down.
+
+\begin{definition}[Flow]
+A \textbf{flow} is a set of mappings $\{ \phi_t : X \times \mathbb{R} \rightarrow X \} ,\;\;\;\;t\in \mathbb{R}$ 
+ 
+With the following restrictions:
+
+\begin{enumerate}
+\item The flow must map any element $x\in X$ to itself if the time $t\in \mathbb{R}$ is equal to zero, in other words for $t=0$, it must be the identity map. 
+\begin{align}
+\phi_{0} = e
+\end{align}
+\item And two consecutive flows are applied to $x$ with two different time variables $t_1,t_2 \in \mathbb{R}$ and  $t_1 \neq t_2$:
+\begin{align}
+\phi_{t_1} \cdot \phi_{t_2} = \phi_{t_1+t_2}
+\end{align}
+such that the flow is a linear mapping in time.
+
+\end{enumerate}
+\end{definition}
+
+\section{Symmetry in Dynamical Systems}
+A symmetry surely resembles an invariance under an operation, but we must point out what actually is remaining invariant to be able to talk about symmetry. The element that will remain invariant might be ambiguous, so we will solidify it.
+
+A flow with a phase space defined in $\mathbb{R}^n$ can be represented with a $n$ differential equations:
+\begin{align}
+\label{eq:dynamical_system}
+ \dot{x} = F(x)
+\end{align}
+\nomenclature{$\dot{x}$}{time derivative of the variable x}
+where  $x\in \mathbb{R}^n$ , and $F:   \mathbb{R}^n \mapsto  \mathbb{R}^n$ is a smooth map. This paper  will exemplify symmetries of dynamical systems of such structure, those can be represented with a set of first order differential equations. These systems will have a continuous time and phase space, with a smooth map.
+
+\nomenclature{$\Gamma$}{The symmetry group}
+
+\begin{definition}[Symmetry of a set of differential equations]
+\index{symmetry!of a dynamical system}
+Let $ \gamma  $ be an operator defined in the same state space, 
+\begin{align}
+\label{eq:symmetry_operator}
+ \gamma  :  \mathbb{R}^n \mapsto  \mathbb{R}^n 
+\end{align}
+$ \gamma  $ is a \textbf{symmetry operator} of Equation \ref{eq:dynamical_system}  when $ \gamma  x(t) $ is a solution for that dynamical system for all $x(t)$ that are also solutions.
+\end{definition}
+
+There can be an ensemble of these symmetry operators for an arbitrary dynamical system. One of them is the identity operator whose action on the n dimensional phase space is $e: x\mapsto x , x \in \mathbb{R}^n$. Thus the identity operator is a symmetry operator for the set of dynamical systems in the form of Equation \ref{eq:dynamical_system}. 
+
+This ensemble of symmetry operations form a group themselves.
+
+\begin{definition}[Symmetry Group of a set of differential equations]
+\label{symmetry group}
+A symmetry group of Equation \ref{eq:dynamical_system} is a group of all symmetry operator of Equation \ref{eq:dynamical_system}.
+Let $x_1(t)$ and $x_2(t)$ be functions of time.
+Let $C$ the the set of all possible solutions to Equation \ref{eq:dynamical_system}. 
+\begin{align}
+\label{eq:symmetry_group}
+\Gamma  = \{\gamma : \gamma \cdot x_1(t)\in C \forall x(t) \in C \}
+\end{align}
+\end{definition}
+
+Though it is readily defined, another common way to represent a symmetry operator is through the \emph{equivariance condition}:
+\begin{proposition}
+\label{prop:equivariance_cond}
+$\gamma $ is a symmetry operator if and only if 
+\begin{align}
+ \gamma \cdot f(x) = f(\gamma \cdot x)
+ \end{align}
+is satisfied. 
+\end{proposition}
+From a different point of view, an operator $\gamma$ is a symmetry of a dynamical system $\dot{x} = f(x)$ if it can commute with f  on the field that they are defined in.
+
+We can show that equivariance condition holds for all symmetry operations defined in Equation \ref{eq:symmetry_operator}.
+Let $x(t)$ be a solution of the system $\dot{x}(t) = f(x(t))$. Then, if $\gamma$ is a time-independent symmetry of the system,
+\begin{align}
+\gamma \cdot \dot{x}(t) = \gamma \cdot f(x(t))
+\end{align}
+Since $\gamma$ commutes with time derivative (it does not have an obvious time dependence):
+\begin{align} 
+\gamma \cdot \frac{\partial}{\partial t} x(t) = \frac{\partial}{\partial t}\gamma \cdot x(t)  
+\end{align}
+Since $\gamma \cdot x(t)$ is also a solution to f(x):
+\begin{align}
+\frac{\partial}{\partial t}\gamma \cdot x(t) = f(\gamma \cdot x)
+\end{align}
+thus,
+\begin{align}
+\gamma \cdot \dot{x}(t) = \gamma \cdot f(x) = f(\gamma \cdot x).
+\end{align}
+
+Symmetries of differential equations induce constraints to the solutions of the differential equations. For example, if a problem is invariant (meaning that the differential equation is invariant) under any translations on x-y plane of the Cartesian coordinates, then solutions should also be invariant to these translations, since any of these translations fail to introduce a new problem.
+
+Symmetries that this paper is concerned with, also introduce constraints to the solutions of the system, and the nature of these constraints should be mentioned.
+
+\begin{definition}[Fixed Point Subspace]
+\label{def:fixed_pt_subspace}
+\index{fixed point subspace}
+\textbf{Fixed Point Subspace:}
+Let $G \subseteq \Gamma$ be a subgroup of the symmetry group of a set of differential equations. The fixed point sub space of G is defined as:
+ \begin{align}
+Fix(G) = \{U \in \mathbb{R}^n : g \cdot U  = U , \forall g \in G\} 
+ \end{align}
+ It is the space that is populated by phase space points that remain invariant in any group action of G.
+\end{definition}
+\nomenclature{$\text{Fix}(A)$}{Fixed point subspace of the group A}
+
+An instructive example is the fixed point subspace of the action of the Lie group $\mathbf{S}^2$ in three dimensional Cartesian coordinates. 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.2\linewidth]{S_2_fixed.eps}
+\label{fig:s1_fixed}
+\caption[Fixed point subspace of $\mathbf{S}^1$]{Fixed point subspace of $\mathbf{S}^1$. The circle represents all two dimensional rotations in the space that it lies, and all the points that remain invariant under operations of $\mathbf{S}^1$ is the subspace perpendicular to this space.}
+\end{figure}
+
+As shown in Figure \ref{fig:s1_fixed}, the action of the Lie group on $\mathbb{R}^3$ fixes a one dimensional subspace of $\mathbb{R}^3$. As fixed point subspace may be defined with the help of a symmetry group, a group may also be defined from the solutions that it will fix:
+%
+\begin{definition}[Isotropy Subgroup]
+\index{group!isotropy subgroup}
+\label{def:isotropy_subgroup}
+Let G be a group that acts on a space $\mathbb{X}$.
+An isotropy subgroup of G is a subgroup of G that fixes a point in $\mathbb{X}$.\cite{golubitsky_symmetry_2003,scholarpedia_dynamical_systems}
+Namely,
+\begin{align}
+\Sigma_x = \{g \in G: g\cdot x = x \} ,\;\;  x \in \mathbb{X}
+\end{align}
+One might use the term for a \textbf{set} of points, trajectories:
+\begin{align}
+\Sigma_{u(t)} = \{g \in G: g\cdot u(t) = u(t) \} ,\;\;  u(t) \in \mathbb{X}
+\end{align}
+in which u(t) is the trajectory in question.
+\end{definition}
+%
+This definition leads to an important theorem:
+%
+\begin{theorem}
+\label{thm:flow_invariance}
+Let $f: \mathbb{R}^n \rightarrow \mathbb{R}^n$ be $\Gamma$ equivariant mapping, and let $\Sigma \subseteq \Gamma$ be a subgroup.\cite{golubitsky_symmetry_2003}
+Then,
+\begin{align}
+f(\text{Fix}(\Sigma)) \subseteq \text{Fix}(\Sigma)
+\end{align}
+\end{theorem}
+%
+\begin{proof}
+Let $v \in \mathbb{R}^n$ be a point in our phase space and $\sigma \in \Sigma$
+be a symmetry operation. Then since equivarience condition, Equation \ref{prop:equivariance_cond} holds,
+\begin{align}
+\sigma \cdot f(v) = f(\sigma \cdot v).
+\end{align}
+If v is in the fixed point subspace of $\Sigma$, then $\sigma \cdot v = v$ implies:
+\begin{align}
+f(\sigma \cdot v) = f(v) \;\;\; \forall v \in \text{Fix}(\Sigma)\\
+f(\text{Fix}(\Sigma)) \subset \text{Fix}(\Sigma)
+\end{align}
+\end{proof}
+%
+\begin{figure}[H]
+\center
+\includegraphics[width=0.3\linewidth]{flow_invar.eps}
+\label{fig:s1_fixed}
+\caption[Flow invariance under $\mathbf{\Sigma}$]{Flow invariance under a discrete group $\Sigma$ with one dimensional Fix($\Sigma$). Bold lines represent the solutions for different initial conditions.}
+\end{figure}
+%
+Theorem \ref{thm:flow_invariance} has an important consequence. If the flow f is $\Gamma$ equivariant, any point in its fixed point subspace will be evolved in time into some point in the same subspace. For example, if a flow in $\mathbb{R}^3$ is $\mathbf{S}^1$ equivariant, any point in its $\text{Fix} (\mathbf{S}^1)$ will be mapped onto itself. If the points in this subspace are asymptotically stable equilibria, then any initial conditions within its attractive basin will end up in the fixed point subspace and remain there. 
+%
+\subsection{Networks of Dynamical Systems}
+%
+For a network of dynamical systems many examples can be given. One is a network of neurons, in which a single neuron is modeled as a dynamical system. Another one can be a set of pendula, which are coupled to each other by forces, in which the state of a single pendulum is represented as a point in the state space of its corresponding mechanical system.
+
+\begin{example}
+Let us consider a particle moving under the influence of a force. Its state in three dimensional space can be represented by orbits in its state space, most generally being the space of its generalized coordinates, $q_i$ and $ \dot{q}_i$. But for simplicity, and also without losing any generality, we can use Cartesian coordinates x,y,z. It is clear that the state space, which will represent the state of our system is in, will have information about the position of the particle, thus it must be able to represent have a position vector $(x,y,z) \in \mathbb{R}^3$. Also, this particle would have a mass and a velocity, which should also be represented by our state space, so it must also hold a momentum vector $(p_x,p_y,p_z) \in \mathbb{R}^3$. Since a state of our system of one particle, can be in \emph{any} combination of the two, our state space will be the Cartesian product of these two spaces,
+\begin{align}
+\mathbb{R}^3 \times \mathbb{R}^3=\mathbb{R}^6
+\end{align}
+\nomenclature{$\times$}{Cartesian product for groups and spaces}
+
+The state of two distinguishable particles will require an additional six dimensional space. Even if these two particles interact with each other, the dimension of the state space will remain as it is, requiring that the interaction force is not a function of speed or its higher time derivatives. This is because solution of a mechanical system is identified with equations:
+
+\begin{align}
+\dot{\mathbf{p}} &= F(\mathbf{x})\\
+\dot{\mathbf{x}} &= \frac{\mathbf{p}}{m}
+\end{align}
+
+So we can also consider these particles interacting with a very small force, it can be for example, a gravitational attraction. This attraction will be added to the mechanical equations as an additional term, resulting these two dynamical systems governed by differential equations \textbf{to be coupled} to each other. With this system of two single particles which all individually have six differential equations and thus six generalized coordinates, can be represented fully with one dynamical system with double the number of differential equations and double the state space dimension.
+
+Here, the nature of a system composed of numerous subsystems, may be too general for our use. Subsystems may be dynamical systems of different nature, with no restriction on the nature of the coupling. This may lead to an arbitrary set of equations that for most of the cases will be very hard to interpret in simple terms. Thus, in order to be lead to a satisfactory interpretation, simplifications are made in such ways that the phenomena that is to be interpreted will be in dominance. Here, we will take all systems similar in nature, and take inter-system couplings as weak and linear.
+
+\end{example}
+
+Therefore, all networks of dynamical systems can be represented with another dynamical system with a new set of differential equations and state space, which makes the symmetry arguments that can be made for a dynamical system equally applicable to networks of systems. Given that micro-systems have the same inner dynamics, permutational symmetries of a dynamical system network, can always be interpreted as symmetries of the dynamical system as a whole.
+
+\section{Examples}
+
+In order to create an understanding of symmetric dynamical system networks, it is instructive to give a simple example.
+
+Let us take two dynamical systems, that have the same inner dynamics, consequently, have the same set of differential equations, 
+
+\begin{align}
+\begin{array}{cc}
+\dot{x_1}=f(x_1,x_2) &\;\;\;\;\;\;\;\; ,x_1\in\mathbb{R}^k\\
+\dot{x_2}=f(x_2,x_1) &\;\;\;\;\;\;\;\; ,x_2\in\mathbb{R}^k
+\end{array}
+\label{Twocells}
+\end{align}
+
+When mentioning dynamical systems \ding{172} and \ding{173}, and their corresponding variables $ x_1 $ and $ x_2 $, one must consider a \textbf{set} of equations such as:
+
+\begin{align}
+\frac{d}{dt} \left( \begin{array}{c}
+x_{11} \\
+x_{12} \\
+\vdots \\
+x_{1k}
+\end{array} \right)=
+F\left(
+\left( \begin{array}{c}
+x_{11} \\
+x_{12} \\
+\vdots \\
+x_{1k}
+\end{array} \right)
+,
+\left( \begin{array}{c}
+x_{21} \\
+x_{22} \\
+\vdots \\
+x_{2 k}
+\end{array} \right)\right)
+\end{align}
+\begin{align}
+\frac{d}{dt}  \left( \begin{array}{c}
+x_{21} \\
+x_{22} \\
+\vdots \\
+x_{2k}
+\end{array} \right) =
+F \left(
+\left( \begin{array}{c}
+x_{21}\\
+x_{22}\\
+\vdots\\
+x_{2k}
+\end{array} \right)
+,
+\left( \begin{array}{c}
+x_{11}\\
+x_{12}\\
+\vdots\\
+x_{1 k}
+\end{array} \right)\right)
+\end{align}
+%
+in the most general form, since any variable of each system can be a coupling parameter for the other system. In most of our examples, we will omit cross-coupling between variables of different type, though the statement above is still valid, $f(\cdot)$ can be constructed such that all variables are multiplied with zero but one which is the coupling parameter. 
+%
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.5]{TwoCoupledSystems.eps}
+\caption[Geometrical representation of two coupled systems]{Graphical representation of two coupled systems, \ding{172} and \ding{173} }
+\end{figure}
+
+Without the coupling, every single node in the graph is a k dimensional dynamical system within itself. The coupling that is introduced with the arrows on the graph join these two separate systems, thus form a 2k-dimensional system.
+
+If we look at the graph we can easily point out the symmetry of the system. When systems \ding{172} and \ding{173} are interchanged, the graph, and evidently the whole dynamical system remains invariant. We will call such an operation a permutation operation $\sigma (x_1,x_2)=(x_2,x_1)$ and show it as (1,2) in some context (this is the well practiced way to show permutations). When the Equation \ref{Twocells} undergoes permutation operation $\sigma (x_1,x_2)$, the coordinates $x_1$ of system \ding{172} is exchanged with the coordinates $x_2$ of system,
+
+\begin{align}
+\dot{x_1}=&f(x_1,x_2)\rightarrow \dot{x_2}=f(x_2,x_1)\\
+\dot{x_2}=&f(x_2,x_1)\rightarrow \dot{x_1}=f(x_1,x_2)
+\end{align}
+
+\nomenclature{$\rightarrow$}{Implies that}
+
+Let us create such a system with two identical Fitzhugh-Nagumo neuron models. Fitzhugh-Nagumo model is a two dimensional model of a neuron exhibiting spiking, suitable for our needs. 
+
+Neurons, exhibiting a large variety of behavior, are modeled as electrically excitable dynamical systems. Generally, a set of relations between membrane potential and current of ions are taken into account, the potential and currents relate to each other via differential equations of transport and  voltage - current relationship of membrane capacitance. 
+
+Fitzhugh-Nagumo model of neural dynamics is a stripped down nonlinear dynamical system. It is a good and simple replacement of more complex models such as Hodgkin-Huxley model in some cases, since it is a simpler one. 
+
+The behavior of a group of neurons is complex enough to lose cause and effect relationship between form and result. When the numbers of neurons get bigger, an arbitrary arrangement of neurons cease to be comprehensible, but a symmetric arrangement depending on the symmetry, can result in a variety of collective behavior. Understanding of symmetries of a bigger system might give clues to the neuroscientist, give chances to distinguish integrated blocks of neural arrangements, in a non-familiar way. Since neuroscience is a thriving area of interest, this thesis will use the Fitzhugh-Nagumo model in simulations. \cite{fitzhugh1961impulses} The main research in this area is also dominated by neural applications, which is obvious from the primary sources that are cited.
+
+\begin{model}
+\index{Neuron Models!Fitzhugh-Nagumo}
+\textbf{Fitzhugh-Nagumo Model}:
+\begin{align}
+\dot{v}&=v-\frac{v^3}{3}-w+i\\
+\dot{w}&=0.08(v+0.7-0.8 w )
+\end{align}
+%
+where v and w are variables of the system, v models the membrane potential, and w provides the intrinsic feedback mechanism. The parameter i is the stimulus current, a variable that is open to outer interference, models the stimuli. 
+\end{model}
+
+Using this model for systems  \ding{172} and \ding{173}, we can probe further down in the dynamics. 
+\begin{figure}[H]
+\center
+\includegraphics[height=0.7\linewidth, angle=-90]{FN2/PhaseSpace1.ps}
+\caption[Projection of the phase space representation of the coupled system onto $w_1$-$v_1$ axes.]{Projection of the phase space representation of the coupled system onto $w_1$-$v_1$ axes. This is the phase space plot of system \ding{172} only. The dotted  curves are the nullclines, the solid line is a solution. $i=1$ , $\gamma  = 0.1$}
+\end{figure}
+
+This is a characteristic phase space of a Fitzhugh-Nagumo cell, where the nullclines
+
+\begin{align}
+v-\frac{v^3}{3}-w+i=0\\
+v+0.7-0.8 w = 0
+\end{align}
+%
+are clearly visible and the intersection is an unstable equilibrium point. 
+
+\begin{figure}[H]
+\center
+\includegraphics[height=0.7\linewidth, angle=-90]{FN2/halfperiod.ps}
+\caption{Evolution of $v_1$ (dashed curve) and $v_2$ (solid curve) with time}
+\end{figure}
+
+If we look from a symmetry perspective, these two systems exhibit a permutation symmetry, as stated. So, under any possible arrangements of these systems, the encapsulating system remains invariant, which leads to the fact that the symmetry group of the system is $\mathbf{S_2}$. It is one of the main points that will be made clear that this synchrony is the result of the symmetry that this dynamical system exhibits in its structure, and can be explained via the introduction of symmetry groups. 
+
+\section{H/K Theorem}
+
+The H/K Theorem lies at the heart of our interpretation of symmetries in dynamical system networks. The main motivation behind analyzing dynamical system networks and symmetry from a mathematically intensive perspective was the ability to point out general properties of to solutions to dynamical system networks that have symmetry. Now, we are capable of interpreting symmetries of any system with its symmetry group, we also know that the symmetry of a graph correspond to a symmetry in the dynamical system independent of the system concerned. The link between the symmetry properties of the network and the solutions to the individual subsystems is still missing. The H/K theorem gives us the opportunity to make generalizations on the way the individual systems behave. First, some definitions are necessary. \cite{golubitsky_symmetry_2003}
+
+\begin{definition}[Spatial and spatiotemporal symmetries]
+\label{def:h_and_k}
+\index{spatial symmetry}
+\index{spatiotemporal symmetry}
+Let us define the symmetry groups of a system as H,K and $\Gamma $:
+\begin{align}
+ K \triangleleft H \triangleleft \Gamma 
+\end{align}
+and let $x(t)$ be solutions to this system.
+the spatiotemporal symmetries of the system form a subgroup satisfying:
+\begin{align}
+\label{eq:h}
+H = \{ \gamma  \in \Gamma : \gamma  \{x(t)\} = \{x(t)\} \}
+\end{align}
+and the spatial symmetries of the system also form a subgroup satisfying:
+\begin{align}
+\label{eq:k}
+K = \{ \gamma  \in \Gamma : \gamma  x(t) = x(t) , \; \forall t\}
+\end{align}
+\end{definition}
+
+An explanation is needed in order to unveil the definitions from the notation. The spatiotemporal symmetries of the system, when act upon the system, each solution of the system is mapped to a solution of the same system, but strictly the same solution, same point in the phase space in the same time. This state will be noted as synchrony between systems. The spatial symmetries of the system, when they act on the system, they preserve the trajectories of the solutions, but points that form the solutions on the phase space are not mapped onto the same point for a particular time, a solution might trace the same trajectory, but in a different time, namely, with a delay.
+
+Let $u(t)$ be a periodic solution to a $\Gamma$ equivariant Equation \ref{eq:dynamical_system}. Let us define groups H and K as introduced in Equations \ref{eq:k} and \ref{eq:h}. Let $u(0)$ be an initial condition for the solution $u(t)$ and $\gamma$ be in the isotropy subgroup of $u(0)$. Then, $\gamma$ will map $u(0)$ to $u(0)$, and $\gamma \cdot u(t)$ will be another solution to the differential equation with the same initial condition, $u(0)$.  Uniqueness of solutions asserts $\gamma \cdot u(t)$ and $u(t)$ ought to be the same solution, since they are governed with the same flow with the same initial conditions. In that case, $\gamma \in K$ for all $\gamma \in \Sigma_{u(0)}$.
+
+Let us define a homomorphism $\Theta : H \rightarrow \mathbf{S}^1$ where $\theta = \Theta(h_i)$. For every element of H, there is a corresponding $\theta$, which denotes the phase difference of a periodic solution $u(t+\theta)$ with a reference solution $u(t)$. Elements of K are mapped onto $\theta = 0$, since K is the kernel of this homomorphism. Since $K=\text{Ker}(\theta)$, K is a normal subgroup, dictated by Theorem \ref{thm:first_isomorphism_thm} , First Isomorphism Theorem. This theorem also states that the image of $\theta$, Im($\theta$) is isomorphic to the quotient group H/K. The image of $\theta$ is sure to be a subgroup of $\mathbf{S}^1$. That implies $H/K \cong \mathbf{Z}_m $ or $H/K \cong \mathbf{S}^1$. If we take the former isomorphism as granted, the form of H/K will determine the phase differences in the dynamical system network, and since H/K is a cyclic group, the solutions to the dynamical system will exhibit phase differences $\theta = T/m$ ,where m is the order of H/K and T is one period of u(t), which is in Fix(K).
+
+For now, it was assumed that the solution u(t) was a periodic solution of Equation \ref{eq:dynamical_system}. In order for a differential equation to exhibit a stable oscillation,
+ the dimension of its phase space must be at least two. The symmetry of the system will force u(t) to be in Fix$(\Sigma_{u(t)}) =$ Fix$(K)$ , so $\text{dim}(\text{Fix}(K))\geq 2$. \cite{golubitsky_symmetry_2003}
+ 
+These conditions are all put together in a form of a Theorem as the H/K theorem:  \cite{golubitsky_symmetry_2003}
+ 
+\begin{theorem}(H/K Theorem)
+\label{thm:hk}
+\index{H/K Theorem}
+\cite{golubitsky_symmetry_2003,stewart_symmetry_2003}
+
+Let $\gamma$ be a symmetry group of coupled cell network of cells of at least two dimensional state space. Let 
+
+\begin{align}
+ K \triangleleft H \triangleleft \Gamma 
+\end{align}
+ 
+\nomenclature{$A \triangleleft B$}{A is a normal subgroup of B}
+%
+be normal subgroups of  $\Gamma$. 
+
+There exists spatial symmetries K and spatiotemporal symmetries H if and only if H/K is a cyclic quotient group, and K is a isotropy subgroup.
+\end{theorem} 
+
+\chapter{Eight Cell Network with Symmetry Group $\mathbf{Z}_4 \times \mathbf{Z}_2$}
+\thispagestyle{empty}
+
+
+\begin{figure}[H]
+\label{8cell}
+\center
+\includegraphics[scale=0.5]{8cells.eps}
+\caption{An eight cell network with $\mathbf{Z}_2 \times \mathbf{Z}_4$ symmetry}
+\end{figure}
+
+Let us give an example to shed light on the implications of the H/K Theorem.
+
+Here is a network of 8 similar cells, each of them being a dynamical system of order two or more, so that they can exhibit oscillatory behavior. 
+
+The graph has several symmetries. One of them is an operator that maps \ding{172} $\longrightarrow$ \ding{174},\ding{174} $\longrightarrow$ \ding{176},\ding{176} $\longrightarrow$ \ding{178} and \ding{178} $\longrightarrow$ \ding{172} while it also maps  \ding{173} $\longrightarrow$ \ding{175},\ding{175} $\longrightarrow$ \ding{177},\ding{177} $\longrightarrow$ \ding{179} and \ding{179} $\longrightarrow$ \ding{173}. This group operator can be denoted with the cycle notation as (1357)(2468). One can see that rotating one of the sides does not preserve the structure. If only \ding{172} $\longrightarrow$ \ding{174},\ding{174} $\longrightarrow$ \ding{176},\ding{176}  $\longrightarrow$ \ding{178} and \ding{178}  $\longrightarrow$  \ding {172} is applied, the branches that couple odd numbered systems to even numbered systems would not remain in the same combination. 
+
+Another symmetry operation would be the one that would map \ding{172} $\longleftrightarrow$ \ding{173} , \ding{174} $\longleftrightarrow$ \ding{175}, \ding{176} $\longleftrightarrow$ \ding{177}, \ding{178} $\longleftrightarrow$ \ding{179}, or (12)(34)(56)(78). This is equivalent to taking a mirror image, if a visual aid may be practical. 
+
+The set of operators generated by (1357)(2468) are closed within that set, and form a group. Let us call this group $\mathbf{Z}_4$ , being a cyclic group of order 4,
+
+\begin{align}
+\mathbf{Z}_4 = \{e, \rho , \rho^2, \rho^3\}
+\end{align}
+
+$\rho^i$ being the ith rotation, e being the unit operation.
+
+The second family of operations would be the reflection group, generated by (12)(34)(56)(78), which could be shown as,
+
+\begin{align}
+\mathbf{D}_1 = \{e , \sigma\}
+\end{align}
+
+It is evident that having both of these symmetry groups, any combination of these symmetry operation still also be a symmetry operation, in other words, when applied, the system will remain as is. Therefore, the Cartesian product of these two groups,
+
+\begin{align}
+\mathbf{Z}_4 \times \mathbf{D}_1 = \{1, \rho , \rho^2, \rho^3,  \sigma \rho^1 , \sigma \rho^2, \sigma\rho^3\}
+\end{align}
+%
+will also form a symmetry group (Reader can check whether it meets definition \ref{def:group}, the group criteria.) 
+
+This also forms our main symmetry group, 
+\begin{align}
+\gamma  = \mathbf{Z}_4 \times \mathbf{D}_1 = \{1, \rho , \rho^2, \rho^3,  \sigma \rho^1 , \sigma \rho^2, \sigma\rho^3\}
+\end{align}
+
+Our system exhibiting symmetry of $\mathbf{Z}_4 \times \mathbf{D}_1$, we can proceed applying the H/K Theorem. 
+
+\section{Solutions for $H \cong Z_4(\rho)$ and $K \cong Z_2(\rho^2)$}
+
+Let us select H and K, both of them must be normal subgroups of $\Gamma $, H/K must form a cyclic quotient group, and K must be an isotropy subgroup. 
+
+\begin{align}
+H = \{ i , \rho^1 ,\rho^2 ,\rho^3 \} \\
+K = \{ i , \rho^2 \}
+\end{align}
+
+There are different ways to show that both of these groups are normal subgroups of \ $\gamma $. First of all the symmetry group \ $\Gamma $ is Abelian (in other words, its elements commute). And every subgroup of an Abelian group is a normal subgroup of that group. Normally, of the symmetry group \ $\Gamma $ is not Abelian, one would have to check that 
+
+\begin{align}
+\gamma _j h_i \gamma _j^{-1} \in H ; \;\;\; \forall \gamma _j \in \Gamma  ,\;\;\; \forall h_i \in H
+\end{align}
+holds. 
+
+We should check whether K is an isotropy subgroup of \ $\Gamma $.
+
+that way, the quotient group H/K will be populated by left cosets of H multiplied with K,
+%
+\begin{align}
+H/K =\{ i\cdot \{i,\rho^2\},\rho^1 \cdot \{i,\rho^2\},\rho^2 \cdot \{i,\rho^2\}, \rho^3 \cdot\{i,\rho^2\}  \}
+\end{align}
+%
+When multiplications are executed, some of the elements of the set turn out to be analogous to other elements as their action:
+%
+\begin{align}
+H/K =\{ \{i,\rho^2\},\{\rho^1,\rho^3\} \}
+\end{align}
+%
+which \textbf{is} cyclic, since every element of the group can be generated by $\{\rho^1,\rho^3\}$ by multiplication. Multiplication is defined as follows. When two cosets are multiplied, the resultant is a coset, and it consists of individual elements of the cosets multiplied (law of composition of the group) with each other. So, if we multiplied $\{\rho^1,\rho^3\}$ with itself, we would have:
+\begin{align}
+\{\rho^1,\rho^3\}\cdot \{\rho^1,\rho^3\} = \{\rho^1\rho^1,\rho^3\rho^3,\rho^3\rho^1,\rho^1\rho^3\}=\{\rho^2,i\}
+\end{align}
+which gives the other element of the H/K multiplication.
+
+ Since all requirements are satisfied we can conclude that the system will have spatial symmetries K and spatiotemporal symmetries H in its solutions.\\
+
+Lets take the solution for \ding{172} as $x_1(t)$. If we apply the generator for K, namely, $\rho^2$ to it, it is stated by the H/K theorem that it will have a spatiotemporal symmetry, meaning that $x_5(t)$ will follow $x_1(t)$ for all t. The same applies to $x_2(t)$ , which is followed by $x_6(t)$. Algebraically, the existence of our generator for the cyclic symmetry group K \symbolfootnote[2]{It is instructive to note that this symmetry group is also in the form of $\mathbf{Z_2}$. We named it as $\mathbf{D_1}$.} implies that:
+%
+\begin{align}
+\begin{array}{c}
+x_1(t)  = x_5 (t)\\
+x_2(t)  = x_6 (t)\\
+x_3(t)  = x_7 (t)\\
+x_4(t)  = x_8 (t)\\
+\end{array}  \;\; ,  \forall t \in \mathbb{T}
+\end{align} 
+%
+Depending on the H/K Theorem, we also can predict that solutions that have a phase shift of $T/2$, since the generator of the H is the operator $\rho^1$. The phase shift is determined by the fact that the operation $\rho^2$ is within spatio-temporal symmetries of the system, thus must be invariant for all the solutions, since two consecutive operations of $\rho^1$ must result in a spatially and temporally symmetric solutions.
+
+This example that we have gone through is the model that is proposed by \citet{Golubitsky199856} in order to explain how more complex walking rhythms are observed in four legged animals within the context of symmetry. In order to maintain all the observed gaits in four legged animals. In addition to a coupled four cell network each one representing one leg, another layer of cells that are coupled in such a way that the system presents the symmetry of $\mathbf{Z_4} \times \mathbf{Z_2}$, from which all primary gaits for all four legged animals can derived. Every different way to select a H/K group (in other words, every different way to select a pair of H and K, satisfying the conditions stated) a different gait is produced. A more thorough treatment is available in \citet{golubitsky_symmetry_2003, stewart_symmetry_2003}.
+
+Since we have spotted out the symmetries of the system, we could go on showing other solutions also exist. Let us introduce a notation and then investigate more. In order to point out a particular symmetry of the graph with a particular generator, lets write $\Gamma ( \gamma )$, $\Gamma $ being the symmetry group and $\gamma $ being the generator associated. So, $\mathbf{Z_2}(\sigma \rho^2)$ represents a cyclic group of order 2, its generator being one mirror and two consecutive rotation operations. 
+
+
+\section{Solutions for $H \cong \Gamma$ and $K \cong Z_2(\sigma\rho^2)$}
+Having sorted notation out, lets select two different H and K groups:
+%
+\begin{align}
+H =& \{ i , \rho^1 ,\rho^2 ,\rho^3,  \sigma , \sigma\rho^1 ,\sigma\rho^2 ,\sigma\rho^3 \} \\
+K =& \{ i , \sigma \rho^2 \}
+\end{align}
+%
+with the new notation, we can show them as:
+%
+\begin{align}
+H = \gamma  \;\;\;\; K=\mathbf{Z_2}(\sigma\rho^2)
+\end{align}
+%
+building H/K,
+%
+\begin{align} 
+H/K =& \{ \{ i , \sigma \rho^2 \} , \rho^1 \cdot\{ i , \sigma \rho^2 \} ,\rho^2 \cdot\{ i , \sigma \rho^2 \} ,\rho^3 \cdot\{ i , \sigma \rho^2 \},\\
+ &\sigma \cdot\{ i , \sigma \rho^2 \} , \sigma\rho^1 \cdot\{ i , \sigma \rho^2 \} ,\sigma \rho^2 \cdot\{ i , \sigma \rho^2 \},\sigma\rho^3 \cdot\{ i , \sigma \rho^2 \} \} 
+\end{align}
+%
+if we apply the operators to the elements of the cosets and eliminate repetition,
+%
+\nomenclature{$a \cdot B$}{Left coset of a and group B}
+%
+\begin{align} 
+H/K = & \{ \{ i , \sigma\rho^2 \},\{ \rho^1 , \sigma \rho^3 \} ,\{ \rho^2  , \sigma \} , \{ \rho^3 , \sigma \rho^1 \}, \} 
+\end{align}
+H/K is cyclic, and its generator is $\{ \rho , \sigma \rho^3 \}$:
+\begin{align} 
+\{ \rho , \sigma \rho^3 \}\cdot\{ \rho , \sigma \rho^3 \} &= \{ \rho^2 ,\rho^2 , \sigma \rho^4 , \sigma \rho^4 \} = \{ \rho^2 ,\sigma\} \\
+\{ \rho , \sigma \rho^3 \}\cdot \{ \rho^2 ,\sigma \} &= \{ \sigma\rho,\rho^3,\sigma\rho,\rho^3 \} =  \{\sigma \rho , \sigma \rho^3 \}\\
+\{ \rho , \sigma \rho^3 \}\cdot \{\sigma \rho , \sigma \rho^3 \} &= \{\sigma \rho^2 , \sigma \rho^6, \rho^4, \rho^4\sigma^2 \} = \{ \sigma \rho^2 ,i \}
+\end{align}
+Hence we have shown that we can populate every element of H/K with the generator $\{ \rho , \sigma \rho^3 \}$ .
+
+With the help of the H/K Theorem, we can conclude that we have the spatiotemporal symmetries of H and spatial symmetries of K.
+
+\section{Simulations}
+For all possible legal combinations of H and K, we will have a resultant limit cycle $U(t)$ that will have the corresponding symmetries. Here is a table for some possible combinations of H and K, and the corresponding solutions:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+H & K & $(\theta_1,\theta_2,\theta_3,\theta_4,\theta_5,\theta_6,\theta_7,\theta_8)$\\ 
+\hline
+$\Gamma$ & $\Gamma$ & $(0,0,0,0,0,0,0,0)$\\ 
+$\Gamma$ & $\mathbf{Z}_4(\rho)$ & (0,\sfrac{1}{2},0,\sfrac{1}{2},0,\sfrac{1}{2},0,\sfrac{1}{2})\\
+$\Gamma$ & $\mathbf{Z}_4(\sigma \rho)$ & (0,\sfrac{1}{2},\sfrac{1}{2},0,0,\sfrac{1}{2},\sfrac{1}{2},0)\\
+$\Gamma$ & $\mathbf{Z}_2(\sigma)$ & (0,0,\sfrac{1}{4},\sfrac{1}{4},\sfrac{1}{2},\sfrac{1}{2},\sfrac{3}{4},\sfrac{3}{4})\\
+$\Gamma$ & $\mathbf{Z}_2(\sigma\rho^2)$ & (0,\sfrac{1}{2},\sfrac{1}{4},\sfrac{3}{4},\sfrac{1}{2},0,\sfrac{3}{4},\sfrac{1}{4})\\
+\hline
+\end{tabular} 
+\end{center}
+
+Let us verify this by finding the corresponding solutions with a numerical aid.
+These solutions are obtained by using a software named XPPAUT.\cite{xppaut}
+
+When we connect cells of FitzHugh-Nagumo cells to each other by coupling every variable to the corresponding variable of the cell that is linked to the original one as:
+
+\begin{align}
+\nonumber v_1'=& v_1-(v_1^3)/3-w_1+i+a\cdot v_7+c \cdot v_2 \\
+\nonumber w_1'=& 0.08\cdot (v_1+0.7-0.8\cdot w_1)+a \cdot w_7+c \cdot w_2\\
+\nonumber v_2'=& v_2-(v_2^3)/3-w_2+i+a \cdot v_8+c \cdot v_1\\
+\nonumber w_2'=& 0.08\cdot (v_2+0.7-0.8\cdot w_2)+a \cdot w_8+c \cdot w_1\\
+\nonumber v_3'=& v_3-(v_3^3)/3-w_3+i+a \cdot v_1+c \cdot v_4\\
+\nonumber w_3'=& 0.08\cdot (v_3+0.7-0.8\cdot w_3)+a \cdot w_1+c \cdot w_4\\
+\nonumber v_4'=& v_4-(v_4^3)/3-w_4+i+a \cdot v_2+c \cdot v_3\\
+w_4'=& 0.08\cdot (v_4+0.7-0.8\cdot w_4)+a \cdot w_2+c \cdot w_3\\
+\nonumber v_5'=& v_5-(v_5^3)/3-w_5+i+a \cdot v_3+c \cdot v_6\\
+\nonumber w_5'=& 0.08\cdot (v_5+0.7-0.8\cdot w_5)+a \cdot w_3+c \cdot w_6\\
+\nonumber v_6'=& v_6-(v_6^3)/3-w_6+i+a \cdot v_4+c \cdot v_5\\
+\nonumber w_6'=& 0.08\cdot (v_6+0.7-0.8\cdot w_6)+a \cdot w_4+c \cdot w_5\\
+\nonumber v_7'=& v_7-(v_7^3)/3-w_7+i+a \cdot v_5+c \cdot v_8\\
+\nonumber w_7'=& 0.08\cdot (v_7+0.7-0.8\cdot w_7)+a \cdot w_5+c \cdot w_8\\
+\nonumber v_8'=& v_8-(v_8^3)/3-w_8+i+a \cdot v_6+c \cdot v_7\\
+\nonumber w_8'=& 0.08\cdot (v_8+0.7-0.8\cdot w_8)+a \cdot w_6+c \cdot w_7
+\end{align} 
+
+As it can be seen from the set of equations, each cell is coupled to its cyclic neighbor (the neighbor that it is connected to with the $\mathbf{Z_4}$) symmetry, with the $a$ coupling parameter, whereas it is connected to its lateral neighbor with the parameter $c$. The coupling parameters taken for $v$ and $w$ may have been chosen to be adjusted independently, but it further complicates an readily complex problem, thus we chose not to. There is a global parameter i, which is the current that excites a single Fitz-Hugh Nagumo neuron. It is fixed as 0.5, since we want all of our systems to be in their oscillatory regime, all the time.
+
+Let is check the results. We can see one of our proposed solutions to our 16 dimensional coupled system in Figure \ref{fig:gait1}. When parameters are chosen as $a = -0.08$ and $0.06$, this solution where we have 180\degree phase difference between consecutive cells having odd and even tags. We will use a shorthand notation (0,0,\sfrac{1}{2},\sfrac{1}{2},0,0,\sfrac{1}{2},\sfrac{1}{2}) for this mode of operation, the fractions showing the phase difference of each cell with the first cell. 
+
+Since we know the steady state solution to this system specifically to these parameters, we can point out which symmetries were dominant. Let us name our periodic solution as $u(t) \in \mathbb{R}^{16}$. We know that our trajectory satisfies conditions, 
+
+\begin{align}
+\nonumber v_1(t) = v_2(t)\;\; \;&\;\;\; w_1(t) = w_2(t)\\
+\nonumber v_3(t) = v_4(t)\;\; \;&\;\;\; w_3(t) = w_4(t)\\
+\nonumber v_5(t) = v_6(t)\;\; \;&\;\;\; w_5(t) = w_6(t)\\
+v_7(t) = v_8(t)\;\; \;&\;\;\; w_7(t) = w_8(t)\\
+\nonumber v_1(t) = v_5(t)\;\; \;&\;\;\; w_1(t) = w_5(t)\\
+\nonumber v_2(t) = v_6(t)\;\; \;&\;\;\; w_2(t) = w_6(t)
+\end{align}
+These conditions form a subspace, just like a condition $x=y , x,y $ for points $(x,y) \in \mathbb{R}^2$ forms a line, a one dimensional subspace $\{(x,x) | x \in \mathbb{R}\}$ of $\mathbb{R}^2$. Since any point in our phase space can be represented by variables $v_1$, $v_3$, $w_1$, $w_3$ but not less, we can deduce that the subspace our solution lies on is a four dimensional real space. One can also reach a similar argument by applying a series of projections for the variables that are equal to each other. The isotropy subgroup associated with u(t) is
+
+\begin{align}
+\Sigma_{u(t)} = \{e,\kappa,\omega^2,\kappa \cdot \omega^2 \} \cong \mathbf{Z}_2(\kappa) \times \mathbf{Z}_2(\omega^2) \cong \mathbf{D}_2  = \langle \kappa, \omega^2 \rangle
+\end{align}
+
+Here, $\langle ,\rangle$ is used in order to denote that the group is generated by those elements within the brackets. Same notation will be used to denote the spaces that are spanned by the elements within the brackets.  The fixed point subspace of this isotropy group (the set of points that form a space that are invariant for every single element of a group) is:
+\begin{align}
+\text{Fix} \left(\Sigma_{u(t)}\right) = \langle v_1,v_3,w_1,w_3 \rangle \\
+\text{dim} \left(\text{Fix}\left(\Sigma_{u(t)}\right)\right) = 4
+\end{align}
+
+\begin{figure}[h]
+\centering
+
+\subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph2.ps}
+   \label{fig:subfig1}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph3.ps}
+   \label{fig:subfig2}
+ }
+ 
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph4.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph5.ps}
+   \label{fig:subfig3}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph6.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph7.ps}
+   \label{fig:subfig3}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph8.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/1/Graph9.ps}
+   \label{fig:subfig3}
+ }
+\label{fig:gait1}
+\caption{Steady state solution for the system, $a = -0.08$ and $c = 0.06$}
+\end{figure}
+
+As seen in Figure \ref{fig:gait1}, such a solution that has the isotropy group of is $\mathbf{D}_2$, the dimension of the space that the action  of it fixes is at least 2, we can take the isotropy subgroup of the solution as K, whereas we will select the group denoted as H in Theorem \ref{thm:hk} as $\Gamma$. We could have taken H something else, since there is no contradiction to do so, but one could note that selecting H as a different subgroup of $\Gamma$, such as $\mathbf{D}_2$, we lead to a situation as following:
+
+When we select the group H as $\mathbf{D}_2$, the spatiotemporal symmetries will be:
+\[ \Delta = {(\gamma,\theta) \in \mathbf{D}_2 \times \mathbf{S}^1}  \] in which for all $\gamma$, a trajectory will be invariant to the action of the group element in the phase space. But because $H \neq \Gamma$, the solutions will have two independent spatiotemporal symmetries, one concerning $v_1,v_2,v_5,v_6,w_1,w_2,w_5,w_6$ and one concerning $v_3,v_4,v_7,v_8,w_3,w_4,w_7,w_8$. That means the solutions for the first set of variables may be uncorrelated with the second one. Since it is not our case, we can proceed with $\Gamma$. With intuition, one can say that these cases arise where there is no coupling between some nodes, the case when some are transparent to other. The case when $H \cong Z_4(\omega)$ would lead to two independent systems uncoupled, the right hand side visualized in Figure \ref{8cell} would be independent of the left side.
+
+\nomenclature{$\mathbf{S}^n$}{Lie group of a n dimensional hypersphere}
+
+The solutions corresponding to the groups $H \cong \mathbf{Z}_4(\omega) \times \mathbf{Z}_2(\kappa)$ and $K \cong \mathbf{D}_2$ are found to be in existence, and that they are stable.
+
+Other solutions that correspond to different coupling parameters are as follows. All correspond to a different symmetry group H/K.
+
+\begin{figure}[h]
+\centering
+
+\subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph2.ps}
+   \label{fig:subfig1}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph3.ps}
+   \label{fig:subfig2}
+ }
+ 
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph4.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph5.ps}
+   \label{fig:subfig3}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph6.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph7.ps}
+   \label{fig:subfig3}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph8.ps}
+   \label{fig:subfig3}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/2/Graph9.ps}
+   \label{fig:subfig3}
+ }
+\label{fig:gait2}
+\caption{Steady state solution for the case when coupling parameters are chosen as $a = 0.08$ and $b = -0.02$.}
+\end{figure}
+
+When the parameters are chosen as $a = 0.08$ and $b = -0.02$, the system exhibits a rhythm (0,\sfrac{1}{2},0,\sfrac{1}{2},0,\sfrac{1}{2},0,\sfrac{1}{2}). 
+
+\begin{figure}[h]
+\centering
+
+\subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph2.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph3.ps}
+ }
+ 
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph4.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph5.ps}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph6.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph7.ps}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph8.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/3/Graph9.ps}
+ }
+\label{fig:gait3}
+\caption{Steady state solution for the case when coupling parameters are chosen as $a = -0.0056$ and $-0.0018$}
+\end{figure}
+
+When the parameters are chosen as $a = -0.0056$ and $-0.0018$, the system exhibits a rhythm (0,\sfrac{1}{2},\sfrac{1}{4},\sfrac{3}{4},\sfrac{1}{2},0,\sfrac{3}{4},\sfrac{1}{4}). 
+
+
+\begin{figure}[h]	
+\centering
+
+\subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph2.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph3.ps}
+ }
+ 
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph4.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph5.ps}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph6.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph7.ps}
+ }
+
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph8.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/4/Graph9.ps}
+ }
+\label{fig:gait4}
+\caption{Steady state solution for the case when coupling parameters are chosen as $a = -0.004$ and $-0.002$, with antisymmetrical coupling.}
+\end{figure}
+
+
+When the parameters are chosen as $a = -0.004$ and $-0.002$, the system exhibits a rhythm (0,0,\sfrac{3}{4},\sfrac{3}{4},\sfrac{1}{2},\sfrac{1}{2},\sfrac{1}{4},\sfrac{1}{4}). But in this case, if the coupling constant for $v_i$ is a , coupling constant for $w_i$ is $b=-a$ 
+
+\begin{figure}[h]	
+\centering
+
+\subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph2.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph3.ps}
+ }
+ 
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph4.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph5.ps}
+ }
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph6.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph7.ps}
+ }
+
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph8.ps}
+ }
+ \subfigure{
+   \includegraphics[width=0.45\linewidth] {trots/5/Graph9.ps}
+ }
+\label{fig:gait5}
+\caption{Steady state solution for the case when coupling parameters are chosen as $a = 0.004$ and $-0.002$}
+\end{figure}
+
+When the parameters are chosen as $a = 0.004$ and $-0.002$, the system exhibits a rhythm (0,0,\sfrac{1}{4},\sfrac{1}{4},\sfrac{1}{2},\sfrac{1}{2},\sfrac{3}{4},\sfrac{3}{4}). $b=-a$ holds for this case also.
+
+\chapter{Conclusion}
+In Chapter 4, it is demonstrated that symmetries of dynamical system networks put notable constraints on the observable solutions that might be generated. With the help of the First Isomorphism Theorem and the flow invariant subspaces, H/K theorem was introduced, with one is capable of extracting possible rhythms of oscillations from a dynamical system network. In this paper it was shown that these solutions exist and are stable, backing the resultant theorem with numerical data. But it still remains as a question how can one stable solution can be triggered into another one. This question gains importance when one speculates how animals change their gait, as they accelerate. In order to answer this question, and speculate on how network of systems with symmetry change "mode"  of operation, one should go beyond the point it was reached in this work, and investigate the Equivariant Branching Lemma \cite{golubitsky_symmetry_2003,scholarpedia_bifurcation_theory}.

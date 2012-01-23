@@ -1,0 +1,579 @@
+\chapter{Group Theory}
+\thispagestyle{empty}
+
+\section{Group}
+\index{group theory}
+
+In this section, the mathematical background that will give us the ability to
+work on the symmetries of a system will be presented. In order to work on the
+symmetries of a system qualitatively, one often uses the fact the symmetry operations
+form a \textbf{group}, and that they show characteristics that can be
+explained by \textbf{group theory}. The properties of symmetry groups will be covered
+afterwards, in this section fundamentals that will be used in order to have a
+thorough understanding of symmetry groups will be given. This chapter only includes the background that is needed in the subsequent chapters. For a more rigorous and complete approach, one can consult  \citet{rosen_symmetry_1995, armstrong_groups_1988}.
+
+\begin{definition}[Group]
+\label{def:group}
+\index{group!definition of}
+    A \textbf{group} is a set of elements, \textbf{G} representing a group, related with a law of composition,
+     \[\mathbf{G} \times \mathbf{G} \rightarrow \mathbf{G} \]
+     
+     \nomenclature{$a \mapsto b$}{Indication of an element a is mapped to b.}     
+     \nomenclature{$A \rightarrow B$}{A mapping from spaces or sets A to B.}
+    satisfying the following requirements:\\
+
+(Let us denote our group with G, and its law of composition with $\cdot$.)\\
+\nomenclature{$\cdot$}{Law of composition for a group.}
+
+\textbf{Closure:} For all $g_i$ and $g_j$ that satisfies $g_i, g_j \in \mathbf{G} $
+\nomenclature{$g_i \in G$}{$g_i$ is an element of group or set G}
+
+\[g_i\cdot g_j,g_j\cdot g_i \in \mathbf{G}\]
+
+\textbf{Associativity:} For all $g_i$, $g_j$ and $g_k$ that satisfies $g_i, g_j,
+g_k \in G$ such that:
+\[g_i\cdot (g_j\cdot g_k) = (g_i\cdot g_j) \cdot g_k \]
+
+\textbf{Existence of Identity:} For all $g_i \in G$ , there is one and only one $e
+\in G$ such that:
+\[g_i \cdot e = e \cdot g_i = g_i \;\; , \; \forall g_i  \in \mathbf{G}\]
+
+\textbf{Existence of Inverses} In a group with identity element, for each $g_i \in \mathbf{G} $, there is an inverse element $g_i^{-1} \in  \mathbf{G} $ such that:
+\[ g_i^{-1}\cdot g_i = g_i \cdot g_i^{-1} = e \]
+\nomenclature{$e$}{Identity element for a specified group.}
+\end{definition}
+
+These requirements probably are familiar to those who are dealing with vector
+spaces. It may be favorable here to note that group encompasses vector spaces in definition, it is an object that has less restrictions than requirements for being a vector space, thus a vector
+space is also a group. In abstract algebra, a group is an object that is
+derived from \textbf{monoids} \index{monoids}, in which  inverse element is not mandatory.
+
+The group concept is best comprehended by examining examples of it. First,
+we will demonstrate some trivial examples. 
+
+\index{groups!examples for}
+\begin{example}
+ Integers, under the law of composition of addition form a group.
+\[\mathbf{G} = (\{ \dots,-2,-1,0,1,2,\dots \},+)\]
+The  of G have associativity and closure properties under summation.\\ 
+For this group, the identity element is $0$, whereas the inverse
+element of each element $ g_i $ is the negative of it, $ g_i^{-1} = -g_i $\\
+\end{example}
+
+
+\begin{example}
+The set of all rational numbers \emph{do not} form a group under multiplication.\\ This arises
+from the fact that though the set is closed and associative under multiplication, and has the identity element $1$, the inverse of the element zero in that set is undefined. Since every single element is required to have an inverse, it fails to satisfy all group criteria. But the set of elements $\mathbb{Q} - \{0\}$ does form a group under multiplication,
+
+\nomenclature{$\mathbb{Q}$}{Set of all rational numbers}
+\[ \mathbf{G}= (\mathbb{Q} - \{0\},\cdot)\]
+since all the requirements are met with this modification. \\
+\end{example}
+
+\begin{example}
+Real numbers form a group under summation.\\
+\[ \mathbf{G} = (\mathbb{R},+)\]\\
+\nomenclature{$\mathbb{R}$}{Set of all real numbers.}
+It can be shown that the set of real numbers is closed and associative under summation. The identity element is $0$ in this case, whereas for every real number $ a $ an inverse can be found: $ a^{-1}=-a $ 
+\end{example}
+
+Though examples that are given are helpful in getting used to groups, they are not the most instructive examples for our intentions. So, we will try to focus on other possible sets that will satisfy the group criteria.\\
+
+Operations, or transformations can also form a group, which is actually a
+more suitable interpretation of a group in our case, than the examples given above. A group of operators is simply an ensemble of operators that are generally related to each other with the law of composition of consecutive application. \symbolfootnote[2]{Other laws can also be introduced, for example commutation can be the law of composition, as it is the case with Pauli matrices.} Here, the elements of the group are operators themselves, and certainly not the objects that they act on.
+
+\begin{example}
+ \label{ex:rotation_z4}
+\textbf{Rotation Group of $\mathbf{Z_4}$:}
+\nomenclature{$\mathbf{Z_n}$}{Cyclic group of order n}
+\label{cyclic_group}
+\symbolfootnote[3] {Group theory books, like \citet{rosen_symmetry_1995} may call the rotation (cyclic) group as $\mathbf{C}_i$, we are going to use $\mathbf{Z}_i$ for a cyclic group of order i, as our primary source, \citet{golubitsky_symmetry_2003} follows that notation.}
+Let $R_\phi$ be the rotation operation that acts upon vectors in $\mathbb{R}^2$, rotating them $\phi$ degrees clockwise. Let G be the group that has 0\degree, 90\degree, 180\degree, 270\degree \ rotation operators:
+%
+\[ G_{90\degree} = \{ R_{0\degree}, R_{90\degree}, R_{180\degree}, R_{270\degree}\}\]
+
+As mentioned, the law of composition will be consecutive rotations, in which we will omit the symbol unless needed, for example when more than one laws of composition is present. So $R_{90\degree}R_{180\degree}$ is a 180\degree rotation followed by 90\degree rotation, resulting in a 270\degree rotation.\\
+
+As it is evident, any combination of consecutive rotations applied on a vector space is also achievable with one of the rotation operator in the group. Since the results are indistinguishable, these two operations should be the same, so closure holds with this set. As an example,
+%
+\[R_{90\degree}R_{180\degree} = R_{270\degree} \in G_{90\degree}\]
+
+The order of composition is insignificant on the final operation. The reader can check that associativity also holds with this set and law of composition. The identity element is $ R_{0\degree} $ which does not rotate the vector that it acts on. The inverse elements are self evident and are as follows:
+%
+\[R_{90\degree}^{-1} = R_{270\degree}, \; R_{180\degree}^{-1} = R_{180\degree}, \; R_{270\degree}^{-1} = R_{90\degree}, \;R_{0\degree}^{-1} = R_{0\degree}\]
+
+So, we have a system that group theory will be applicable upon seamlessly, since it satisfies all criteria.
+\end{example}
+%
+\begin{example}
+\label{ex:matrix_z4}
+A different group could be the following matrices:
+%
+\begin{align}
+\nonumber\left\lbrace 
+\left( \begin{array}{cc}
+cos(\frac{\pi}{2}) & sin(\frac{\pi}{2}) \\
+ -sin(\frac{\pi}{2}) &  cos(\frac{\pi}{2}) \end{array} \right),
+\left( \begin{array}{cc}
+cos(\pi) & sin(\pi) \\
+ -sin(\pi) &  cos(\pi) \end{array} \right),\right. \\
+\left.
+\left( \begin{array}{cc}
+cos(\frac{3\pi}{2}) & sin(\frac{3\pi}{2}) \\
+ -sin(\frac{3\pi}{2}) &  cos(\frac{3\pi}{2}) \end{array} \right),
+\left( \begin{array}{cc}
+cos(0) & sin(0) \\
+ -sin(0) &  cos(0) \end{array} \right)  
+\right\rbrace
+\end{align} 
+which is:
+\begin{align}
+\left\lbrace 
+\left( \begin{array}{cc}
+0 & 1 \\
+ -1 & 0 \end{array} \right) ,
+\left( \begin{array}{cc}
+-1 & 0 \\
+ 0 & -1 \end{array} \right) ,
+\left( \begin{array}{cc}
+0 & -1 \\
+ 1 & 0 \end{array} \right) ,
+\left( \begin{array}{cc}
+1 & 0 \\
+ 0 & 1 \end{array} \right) 
+\right\rbrace
+\end{align} 
+Which are, 90 \degree \ rotation matrices in $\mathbb{R}^2$. These matrices, are closed under matrix multiplication. They satisfy all other criteria, thus they form a group.
+ \end{example}
+ \begin{example}
+ \label{ex:complex_z4}
+ Another analogous group could be a set of irrational numbers, which is related by the law of composition of multiplication:
+ 
+\[ G_{i} = \{ 1,i,-1,-i\} = \{ 1,e^{i\frac{\pi}{2}},e^{i\pi},e^{i\frac{3\pi}{2}}\}\]
+
+in which we are not acting on vectors in $\mathbb{R}^2 $ anymore but instead on complex numbers $\gamma  = \alpha+\beta i \in \mathbb{C}$. Also, it is notable that our law of composition changed from consecutive rotation and matrix product to multiplication defined in the set of complex numbers.
+\nomenclature{$\mathbb{C}$}{Complex space of all possible complex numbers}
+\end{example} 
+
+
+The resemblance of the three interpretations given in Examples \ref{ex:rotation_z4} , \ref{ex:matrix_z4} and \ref{ex:complex_z4} is evident, and actually they are also related to each other with a mathematical relationship. These three different groups are denoted as the \emph{realizations of an}\index{group!abstract} \textbf{abstract group}, which is labeled as $\mathbf{Z}_4$ in which the notation will be introduced in the following sections.
+
+One should also note that examples that can be given for a group, is also not limited to operators or transformations, but for the sake of the argument, we will focus on groups that are in this nature. A more rigorous treatment for the fundamentals and a bigger variety of examples, one can consult algebra textbooks such as \citet{lang_algebra_2002}
+
+\section{Finite Abstract Groups and Realizations}
+An \textbf{abstract group} \index{group!abstract} is a group that is characterized with its abstract properties. As formerly mentioned, an abstract group is a platonic entity that is without any direct physical resemblance, is a group that one can relate to any group that has the same structure. These groups are often noted with an uppercase letter and a subscript, such as $\mathbf{D_4}$ or $\mathbf{C_3}$. The letter is meant to distinguish the structure, whereas the subscript is an integer characteristic to the group, able to differentiate groups of the same structure. A \textbf{realization}\index{group!realization of} of an abstract group is a group that have the same structure of it. \cite{rosen_symmetry_1995}In this section, we will introduce some well known finite abstract groups with examples for different representations. In our case the symmetry is a discrete symmetry, which implies that our number of elements in our symmetry groups is finite (our groups have a finite order). There is a set of other abstract groups that came out to be very useful while interpreting physical reality that are called Lie Groups, named after Norwegian mathematician Sophus Lie, that represent continuous symmetries.
+
+\begin{definition}[Order of a group]
+The \textbf{order} \index{group!order of} of a group is the number of elements in the group. If a group is composed of infinite elements, it is considered to be of infinite order. Order of a group will be denoted with $ \mathcal{O}(G) $. 
+\cite{rosen_symmetry_1995}
+\nomenclature{$\mathcal{O}(G)$}{Order of a group G}
+\end{definition}
+
+\subsection{Permutation Groups}
+A permutation is a rearrangement of a sequence of elements. When a sequence of elements is permuted, the sequence is mapped onto another one that the position of every element redetermined. 
+\cite{rosen_symmetry_1995} For example, $1234 \mapsto 4213$ is a permutation, which is customary to show as $\left( \begin{matrix} 1234 \\ 4213 \end{matrix} \right)$. The set of possible permutations forms a permutation group. 
+
+\begin{example}
+\label{ex:p_3}
+An instructive example is the permutation group of order 6, noted as $\mathbf{S}_3$ since it is formed by permutations of a sequence of three elements. The elements of this group are:
+\nomenclature{$\mathbf{S}_n$}{Permutation group of all permutations for an n length sequence}
+\begin{align}
+\mathbf{S}_3 =\left\lbrace\left(\begin{matrix}123\\123\end{matrix}\right),\left(\begin{matrix}123\\312\end{matrix}\right),\left(\begin{matrix}123\\231\end{matrix}\right),\left(\begin{matrix}123\\132\end{matrix}\right),\left(\begin{matrix}123\\213\end{matrix}\right),\left(\begin{matrix}123\\321\end{matrix}\right)\right\rbrace
+\end{align}
+Two consecutive permutations will always result in another one, such as,
+\begin{align}
+\left(\begin{matrix}123\\132\end{matrix}\right)\left(\begin{matrix}123\\321\end{matrix}\right) = 
+\left(\begin{matrix}123\\312\end{matrix}\right)
+\end{align}
+Readers may check that $\mathbf{S}_3$ has an identity element $\left(\begin{matrix}123\\123\end{matrix}\right)$, and every element has an inverse.
+\end{example}
+
+Other groups either have too many elements to list, or they are trivially small, since the number of elements for permutations of an n-element sequence is $n!$.
+
+Permutations can also be expressed by a series of other operations, some well known ones are  \textbf{transpositions} \index{transposition} and \textbf{cycles} \index{cycle}. A switch of two elements is called a transposition. A transposition is denoted with two of the elements within parentheses:
+\begin{align}
+(12) = \left(\begin{matrix}12345678\\21345678\end{matrix}\right)
+\end{align}
+as it is the case here, a transposition for a sequence of eight elements.
+\nomenclature{$(123)$}{A cycle that maps 1 to 2, 2 to 3 and 3 back to 1}
+
+A cycle is a permutation that a group of elements switch places in a chainlike fashion. For example, a cycle of (1234) within a sequence of six elements would be:
+%
+\begin{align}
+(1234) = \left(\begin{matrix}123456\\412356\end{matrix}\right)
+\end{align}
+%
+where 1 moves into 2's position, 2 moves into 3's position, 3 moves into 4's position, and 4 moves into 1's position in the sequence. 
+
+Note that cycles are elements of an encompassing permutation group, whereas transpositions are cycles of two elements. Any permutation can be expressed by a series of cycles.
+%
+\begin{align}
+\left(\begin{matrix}123456789\\412356978\end{matrix}\right) = (789)(1234)
+\end{align}
+%
+this is one of many possible ways to decompose a permutation.
+%
+\subsection{Cyclic Groups}
+A cyclic group is a group that all elements of it can be generated from one "generator element". A useful analogy is rotation, in which consecutive rotations generate other rotations in the group. A formal definition may be given as:
+\cite{rosen_symmetry_1995}
+
+\begin{definition}[Cyclic Group]
+A group is \textbf{cyclic} if:
+\begin{align}
+\text{There exists a } g \in \mathbf{G} : G = \langle g \rangle
+\end{align}
+\end{definition}
+\nomenclature{$\langle g \rangle$}{Group generated by element g}
+\nomenclature{$\langle a,b,c \rangle$}{Space spanned by bases a, b and c}
+
+\subsubsection*{Order 1}
+There is only one abstract group that has an order one, which is denoted as $\mathbf{Z}_1$. It has only one element, and evidently it is the identity element, e, which is the inverse of itself. 
+
+\subsubsection*{Order 2}
+Being another trivial abstract group, the group $\mathbf{Z}_2$ is the only group with order 2. The group consists of one element that is its own inverse, since it must satisfy closure, thus 
+\begin{align}\mathbf{Z}_2 = \{a,e\}, \;\; a \cdot a=e\end{align}
+A realization of this group is:
+\begin{align}\mathbf{G} = (\{1,-1\},+)\end{align}
+Another notable realization is the set of transformations
+\begin{align}\mathbf{G} = (\{\kappa,e\})\end{align}
+In which $ \kappa $ is the reflection operator, and e is the identity operation, which maps what it acts upon to itself.
+
+\subsubsection*{Order 3}
+
+The cyclic group of order 3 is denoted as $ \mathbf{Z}_3 $. It is instructive to show the groups structure with tables from now on, since once the number of elements get larger, it gets harder to show the structure with multiplications. Also it provides a useful way to visualize subgroups. Here, each element is represented with a unique letter, which for every possible multiplication of two elements, the resultant group element is the element in the intersection of the corresponding rows and columns. 
+
+\begin{table} [H]
+\center
+$\mathbf{Z}_3$\\
+\begin{tabular}{c||cc} 
+  e & a & b  \\ 
+  \hline 
+     a & b & e  \\ 
+     b & e & a  
+     
+\end{tabular} 
+\end{table} 
+
+$ \mathbf{Z}_3 $ can be represented with a group of coordinate transformations for a two dimensional vector space of 120 degree, 240 degree and 360 degree rotations in one direction.
+
+\subsubsection*{Higher Orders}
+
+The properties of this group can be guessed, since it requires merely a generalization of the notion of a cyclic group.
+
+
+\begin{table} [H]
+\centering
+\begin{minipage}[b]{0.3\linewidth}\centering
+ $\mathbf{Z}_4$\\
+\begin{tabular}{c||cccc} 
+
+ e & a & b & c \\ 
+  \hline 
+     a & b & c & e \\
+     b & c & e & a \\
+     c & e & a & b \\
+    
+     
+\end{tabular} 
+\end{minipage}
+\hspace*{5mm}
+\begin{minipage}[b]{0.3\linewidth}\centering
+ $\mathbf{Z}_5$\\
+\begin{tabular}{c||ccccc} 
+
+  e & a & b & c & d \\ 
+  \hline 
+     a & b & c & d & e \\
+     b & c & d & e & a \\
+     c & d & e & a & b \\
+     d & e & a & b & c \\
+
+     
+\end{tabular} 
+\end{minipage}
+\hspace*{5mm}
+\begin{minipage}[b]{0.3\linewidth}\centering
+$\mathbf{Z}_6$\\
+\begin{tabular}{c||ccccc} 
+
+   e & a & b & c & d & f \\ 
+  \hline 
+     a & b & c & d & f & e \\
+     b & c & d & f & e & a \\
+     c & d & f & e & a & b \\
+     d & f & e & a & b & c \\
+     f & e & a & b & c & d \\
+     
+\end{tabular} 
+\end{minipage}
+\end{table}
+ 
+\subsection{Dihedral Groups} 
+
+Dihedral groups are the abstract group of rotations and reflections that preserve a regular m-gon.
+\cite{rosen_symmetry_1995}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=0.7\linewidth]{dihedral.ps}
+\caption[Geometrical representation of the finite dihedral groups]{Geometrical representation of the finite dihedral groups, the dashed lines represent the reflection symmetries, and curved arrows represent the generator of the rotational symmetries.}
+\label{fig:dihedral}
+\end{figure}
+
+\subsubsection*{Order 4}
+\label{d_2}
+The dihedral group of order 4 is denoted as $\mathbf{D}_2$, and it is the group of reflections and rotations that preserve a line. (Maybe a rectangle is more pleasing visually.) The group elements act on a geometric object by rotating it by 180 \degree, taking the reflection of the object on a specified axis, rotating and reflecting consecutively, or preserving the orientation as it is. On a group table we can show it as:
+\nomenclature{$\mathbf{D}_n$}{dihedral group of order n.}
+
+
+\begin{table} [H]
+\center
+ $\mathbf{D}_2$\\
+\begin{tabular}{c||cccc} 
+      e & a & b & c \\ 
+      \hline 
+      a & e & c & a \\ 
+      b & c & e & a \\
+      c & b & a & e \\ 
+     
+\end{tabular} 
+\end{table} 
+
+Here, every single operation is the inverse of itself. Since the number of elements is 4, $\mathcal{O}(\mathbf{D}_2) = 4$. It should be noted that this group is not Abelian, since $ a\cdot c \neq c \cdot a $ 
+
+\subsubsection*{Order 6}
+\label{d_3}
+
+The dihedral group of order 6 is $\mathbf{D}_3$, and it consists of all rotations and reflections that preserve an equilateral triangle, as denoted in Figure\ \ref{fig:dihedral}. There are three reflection operations, one for each axis and three rotations, 0\degree, 120\degree, 240 \degree \  respectively.
+
+\begin{table} [H]
+\center
+ $\mathbf{D}_3$\\
+\begin{tabular}{c||cccccc} 
+     e & a & b & c & d & f  \\ 
+    \hline 
+     a & b & e & f & c & d  \\ 
+     b & e & a & d & f & c  \\ 
+     c & d & f & e & a & b  \\ 
+     d & f & c & b & e & a  \\ 
+     f & c & d & a & b & e  \\ 
+
+\end{tabular} 
+\end{table} 
+
+Dihedral groups of higher order may be constructed by the regular n-gon analogy that is presented above.
+
+\section{Isomorphism}
+\index{group!isomorphism}
+\label{isomorphism}
+
+Let's consider a one-to-one mapping $\phi$ from a group G to a group G'. These two groups are isomorphic to each other under this mapping if the \textit{structure of the group is preserved}. In other words, under this map from G to G', every equality such as $a\cdot b = c$ preserves its structure as $\phi(a) \cdot \phi(b) = \phi(c)$. A more formal definition may be given as:
+\cite{rosen_symmetry_1995,armstrong_groups_1988}
+
+\begin{definition}[Isomorphism]
+\label{def:isomorphism}
+Two groups G and G' are \textbf{isomorphic} if there is a bijection (a one-to-one mapping)\cite{armstrong_groups_1988}
+\[\phi: G \longleftrightarrow G' \]
+ that satisfies
+\[\phi(a\cdot b) = \phi(a)\cdot \phi(b) ,\;\;\; \forall a,b \in G.\]
+
+The bijection $\phi$ itself is called the \textbf{isomorphism} between G and G'. The isomorphism of the groups is shown as $G \cong G'$.
+
+\nomenclature{$G \cong G'$}{G is isomorphic to G'}
+
+\end{definition}
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.7 ]{isomorphism.eps}
+\caption{Schematical representation of isomorphism}
+\end{figure}
+%
+\section{Homomorphism} 
+\index{group!homomorphism}
+\label{homomorphism}
+
+\begin{example}
+$\mathbf{S}_3$ is the permutation group of sequences with three elements. We have shown in Example \ref{ex:p_3} that $\mathbf{S}_3$ can be shown as: 
+\begin{align}
+\begin{array}{cccccccc}
+\mathbf{S}_3 = \left\lbrace \right. & \left(\begin{matrix}123\\123\end{matrix}\right),& \left(\begin{matrix}123\\312\end{matrix}\right), & \left(\begin{matrix}123\\231\end{matrix}\right), & \left(\begin{matrix}123\\132\end{matrix}\right), & \left(\begin{matrix}123\\213\end{matrix}\right), & \left(\begin{matrix}123\\321\end{matrix}\right) & \left. \right\rbrace \\ 
+& \updownarrow &\updownarrow &\updownarrow &\updownarrow &\updownarrow &\updownarrow & \\
+\mathbf{D}_3 = \left\lbrace \right. & e & a & b & c & d & f & \left. \right\rbrace 
+\end{array} 
+\end{align}
+\end{example}
+ 
+Homomorphism is a more general case of isomorphism, where the requirement of being a bijection is removed. The mapping that we will call as a homomorphism may be a many-to-one mapping.\cite{armstrong_groups_1988}
+
+\begin{definition}[Homomorphism]
+\label{def:homomorphism}
+Let G and G' be groups, and a and b be elements of two different subgroups of G; A and B respectively. A mapping $\phi : G \mapsto G'$ is a \textbf{homomorphism} if,
+\cite{rosen_symmetry_1995,armstrong_groups_1988}
+\[\phi(a\cdot b) = \phi(a) \cdot \phi(b), \;\;\; \forall a \in A \text{ and } b \in B \]
+\end{definition}
+\nomenclature{$\forall$}{For all conditions or elements that follow}
+\nomenclature{$\phi$}{Homomorphism}
+
+
+Some useful tools and definitions that we are going to use are derived from homomorphism, thus it is important to point this function concerning groups. The fact that $\phi$ may not be a bijection does not alter some properties attributed to isomorphisms, those rest only on the fact that the mapping $\phi(\cdot)$ is structure preserving are still valid.
+
+\begin{figure}[H]
+\center
+\includegraphics[scale=0.6]{homomorphism.eps}
+\caption{Schematic representation of homomorphism.}
+\end{figure}
+
+\nomenclature{$\text{Im}(\phi)$}{Image of a group G}
+\nomenclature{$\text{Ker}(\phi)$}{Kernel of a group homomorphism $\phi$}
+
+\begin{definition}[Kernel of a homomorphism]
+\label{def:kernel}
+\index{Kernel}
+
+The \textbf{kernel} of a homomorphism $\phi$, denoted by $\text{Ker}(\phi)$ is the set of the elements of G that are mapped to the identity element of G'.
+\cite{rosen_symmetry_1995}
+\[\text{Ker}(\phi) = \{g \in G \; | \; \phi(g) = e' \; \}\]
+\end{definition}
+%
+\begin{definition}[Image of a homomorphism]
+\label{def:image}
+\index{Image}
+The \textbf{image} of a homomorphism $\phi$, denoted by $\text{Im}(\phi)$ is the subgroup of G' onto which  $\phi$ maps the whole group G. 
+\cite{rosen_symmetry_1995}
+\[\text{Im}(\phi) = \{g' \in G' \; | \; \phi(g) = g', \;\;\; \forall g \in G \}\]
+\end{definition}
+%
+\begin{definition}[Conjugation]
+\label{def:conjugacy_class}
+\index{conjugation}
+Conjugation is the operation $C_g : a \mapsto g^{-1} \cdot a\cdot g$, g and a being in G.
+
+Two elements $a,b \in G$ are called \textbf{conjugate} if $g\cdot a \cdot g^{-1} = b$. Conjugacy between two elements is denoted as $a \equiv b$. 
+\cite{rosen_symmetry_1995}
+\end{definition}
+%
+\nomenclature{$\equiv$}{Equivalence}
+
+There are some properties that may deserve some attention. First of all, every element $g \in G$ is \textit{conjugate with itself}, since $e^{-1} \cdot a \cdot e = e \cdot a \cdot e = a$. Conjugacy is \textit{symmetric}, since for every element u that satisfies $u^{-1} \cdot a \cdot u = b$ , one could always do as following:
+\begin{align}
+u^{-1} \cdot a \cdot u &= b  \\
+u\cdot u^{-1} \cdot a \cdot u\cdot u,^{-1} &= u\cdot b \cdot u^{-1}\\
+a &= u\cdot b \cdot u^{-1}\\
+v^{-1}\cdot b \cdot v &= a \;\;\; , v=u^{-1} \in \mathbf{G}
+\end{align}
+thus prove that (since for every element u there must exist an inverse, v), one can always find a group element that make b conjugate with a as a is conjugate with b. In an Abelian (commuting) group, every element is \textit{only conjugate with itself}. An example might solidify the concept. 
+
+\begin{example}
+One of the few groups that we can populate all conjugacies without falling into a trivial situation (like the cases when the group is Abelian) is $\textbf{D}_3$, dihedral group of order 6.
+ The group table was presented in Section \ref{d_3}. The following conjugations can be taken:
+ \cite{rosen_symmetry_1995}
+\begin{table}[H]
+\center
+\begin{minipage}[b]{0.49\linewidth}
+\center
+ \begin{align}
+\nonumber  b^{-1}ab = b^{-1}e = a \\
+\nonumber  c^{-1}ac = c^{-1}f = b \\
+ d^{-1}ad = d^{-1}c = dc = b\\ 
+\nonumber  f^{-1}af = f^{-1}d = fd = b
+ \end{align}
+\end{minipage}
+\begin{minipage}[b]{0.49\linewidth}
+ \begin{align}
+\nonumber  a^{-1}ba = a^{-1}e = b \\
+\nonumber  c^{-1}bc = c^{-1}d = a \\
+ d^{-1}bd = d^{-1}f = df = a\\ 
+\nonumber  f^{-1}bf = f^{-1}c = fc = a
+ \end{align}
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\begin{minipage}[b]{0.49\linewidth}
+ \begin{align}
+\nonumber  a^{-1}ca = bca = bf = c \\
+\nonumber  b^{-1}cb = adb = ac = f \\
+ d^{-1}cd = cdc = cb = f \\
+\nonumber  f^{-1}cf = fdf = fa = c 
+ \end{align}
+\end{minipage}
+\begin{minipage}[b]{0.49\linewidth}
+ \begin{align}
+\nonumber  a^{-1}da = bda = bf = c \\
+\nonumber  b^{-1}db = adb = ac = f \\
+ c^{-1}dc = cdc = cb = f \\
+\nonumber  f^{-1}df = fdf = fa = c 
+ \end{align}
+\end{minipage}
+\end{table}
+\begin{table}[H]
+\center
+\begin{minipage}[b]{0.49\linewidth}
+\center
+ \begin{align}
+\nonumber  a^{-1}fa = bfa = bc = d \\
+\nonumber  b^{-1}fb = afb = ad = c \\
+ c^{-1}fd = cfc = ca = d \\
+\nonumber  d^{-1}fc = dfd = fb = d 
+ \end{align}
+\end{minipage}
+\end{table}
+
+As it can be seen, different subsets of mutual conjugacy has formed. The identity element, e is conjugate with itself, a and b are conjugate with themselves and each other, c,d and f are conjugate within themselves. Since these subsets are all closed under conjugation, they form subgroups of $\mathbf{D}_3$. These groups are called \textbf{conjugacy classes}. \label{Conjugacy Class}
+\[ \{ e \} \;\; \{a , b \} \;\; \{ c,d,f \} \] It is instructive to note that the symmetries of the equilateral triangle are divided into conjugacy classes as rotations, reflections and the identity element. 
+\end{example}
+%
+\begin{definition}[Normal Subgroup]
+\index{groups!normal subgroup}
+K is a \textbf{normal subgroup} of H if and only if K is a subgroup of G such that elements of it remain in K under conjugation.
+\cite{armstrong_groups_1988}
+Let $h \in H$ and $k \in K \subset H$. Then K is a normal subgroup of H if:
+\begin{align}
+h\cdot k \cdot h^{-1} \in K \;\;\;\;\; \forall k,h
+\end{align}
+%
+(The law of composition is the same for both groups, and is shown with $\cdot$.) This relation is denoted as:
+%
+\begin{align}
+K \triangleleft H
+\end{align}
+\end{definition}
+%
+\begin{definition}[Quotient Group]
+Let H and K be two different groups. The quotient group denoted as H/K is the group of all left cosets of K in H:
+\cite{rosen_symmetry_1995,armstrong_groups_1988}
+\begin{align}
+H/K = {h\cdot K : \forall h \in H}
+\end{align}
+Let us demonstrate it with an example:
+Let us take 
+\begin{align}H=\{h_1,h_2,h_3,h_4,h_5,h_6\} \end{align}
+
+\begin{align}K=\{k_1,k_2,k_3\}\end{align}
+Then H/K can be shown as:
+
+\begin{align}
+\begin{array}{c}
+H/K=\{h_1\cdot \{k_1,k_2,k_3\},h_2 \cdot \{k_1,k_2,k_3\},h_3\cdot \{k_1,k_2,k_3\},\\
+h_4\cdot \{k_1,k_2,k_3\},h_5 \cdot \{k_1,k_2,k_3\},h_6\cdot \{k_1,k_2,k_3\}\}
+\end{array}
+\end{align}
+
+\end{definition}
+%
+\begin{theorem}
+\textbf{First Isomorphism Theorem}
+\label{thm:first_isomorphism_thm}
+\index{First Isomorphism Theorem}
+\cite{rosen_symmetry_1995,armstrong_groups_1988}
+Let G and G' be groups, and $\phi : G \mapsto G'$ be a homomorphism. Then,
+
+1.The kernel of $\phi$ , Ker($\phi$), is a normal subgroup of G.\\
+
+2.The image of $\phi$, Im($\phi$) is a subgroup of G'\\ 
+
+3.The image of $\phi$,  Im($\phi$) is isomorphic to the quotient group G/K.
+\end{theorem}
+%
+\nomenclature{$A/B$}{A quotient B}
+%

@@ -1,0 +1,163 @@
+\documentclass[12pt,a4paper,openany,oneside]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xfrac}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{xkeyval}
+\usepackage{lmodern}
+\usepackage{subfigure}
+\usepackage{gensymb}
+%\usepackage{bbm}
+\usepackage{float}
+%\usepackage{bpchem}
+\usepackage{natbib}
+\usepackage{rotating}
+\citestyle{plain}
+\usepackage{makeidx}
+\usepackage[thmmarks]{ntheorem}
+%\usepackage[normalsections,normalindent,normalleading,normalmargins]{savetrees}
+%\usepackage{savetrees}
+\usepackage{fullpage}
+\usepackage{pifont}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{multicol}
+\usepackage[left=4cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{nomencl}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{chessboard}
+\usepackage{skak}
+
+\lstset{ %
+language=Python,                % choose the language of the code
+basicstyle=\footnotesize \ttfamily,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize \ttfamily,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=false,                   % adds a frame around the code
+tabsize=2,              % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%}{)}          % if you want to add a comment within your code
+}
+
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\newfontfeature{Microtype}{protrusion=default;expansion=default;}
+%\usepackage[utf8]{inputenc}
+\setromanfont[Mapping = tex-text,Ligatures=Common]{Cardo}
+%\setromanfont{Lido STF}
+%\setromanfont[Ligatures={Common}]{Linux Libertine O}
+\setsansfont{Colaborate-Regular}
+\setmonofont[Scale = 0.8]{Droid Sans Mono}
+
+%\let\oldhat\hat
+\renewcommand{\vec}[1]{\mathbf{#1}}
+%\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}}
+\newcommand{\citemali}[2]{\footnote{\citeauthor*{#1}, \citeyear{#1}, #2}}
+\makeindex
+
+
+\theoremstyle{break}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{break}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{break}
+\theoremseparator{}
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{model}{Model}[section]
+
+\theoremstyle{break}
+\theoremseparator{}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\theoremsymbol{\qed}
+\newtheorem{proof}{Proof}[section]
+
+\theoremstyle{break}
+\theoremseparator{}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{break}
+\theoremseparator{}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{break}
+\theoremseparator{:}
+\theoremindent1cm
+\theoremprework{\smallskip\hrule}
+\theorempostwork{\hrule\smallskip}
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{proposition}{Proposition}[section]
+
+
+\theoremstyle{break}
+\theoremseparator{:}
+\theoremindent1cm
+\theoremprework{\smallskip}
+\theorempostwork{\smallskip}
+\newtheorem{code}{Code}[section]
+
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+%\renewcommand\contentsname{Contents}
+%\renewcommand\listfigurename{List of Figures}
+%\renewcommand\listtablename{List of Tables}
+%\renewcommand\bibname{References}
+%\renewcommand\indexname{Index}
+%\renewcommand\figurename{Figure}
+%\renewcommand\tablename{Table}
+%\renewcommand\partname{Part}
+%\renewcommand\chaptername{Chapter}
+%\renewcommand\appendixname{Appendix}
+%\renewcommand\abstractname{Abstract}
+
+
+\makenomenclature
+\begin{document}
+
+\include{Primer}
+\newpage
+
+\onehalfspacing
+\include{Bolum_1}
+\newpage
+\include{Final}
+
+\end{document}
